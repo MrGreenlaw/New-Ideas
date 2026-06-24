@@ -10,7 +10,7 @@ struct OTDTotalCard: View {
 
     var body: some View {
         VStack(spacing: 8) {
-            Text("OUT THE DOOR")
+            Text("CASH TO DRIVE OFF")
                 .font(.system(.subheadline, design: .rounded, weight: .semibold))
                 .tracking(2)
                 .foregroundStyle(.white.opacity(0.85))
@@ -21,8 +21,12 @@ struct OTDTotalCard: View {
                 color: .white
             )
 
+            Text("Title, tax, and fees included")
+                .font(.caption)
+                .foregroundStyle(.white.opacity(0.7))
+
             if savings > 0 {
-                Text("\(AnimatingNumber.currency(savings)) off with trade-in & down")
+                Text("\(AnimatingNumber.currency(savings)) less with trade-in & down")
                     .font(.footnote)
                     .foregroundStyle(.white.opacity(0.8))
                     .transition(.opacity.combined(with: .move(edge: .top)))

@@ -6,7 +6,7 @@ struct TradeInSection: View {
     var body: some View {
         SectionCard {
             VStack(alignment: .leading, spacing: 16) {
-                Text("Trade-In & Down Payment")
+                Text("Paying Less Upfront")
                     .font(.system(.headline, weight: .semibold))
                     .foregroundStyle(.otdNavy)
 

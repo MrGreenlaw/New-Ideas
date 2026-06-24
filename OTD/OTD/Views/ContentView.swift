@@ -50,7 +50,7 @@ struct ContentView: View {
                 Text("OTD")
                     .font(.system(.largeTitle, design: .rounded, weight: .semibold))
                     .foregroundStyle(.otdNavy)
-                Text("Know the real number before you sign")
+                Text("Cash price to drive it off the lot, in your name")
                     .font(.subheadline)
                     .foregroundStyle(.otdMuted)
             }
