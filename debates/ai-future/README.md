@@ -15,6 +15,16 @@ Read in order:
    and labor-market data.
 2. [`01-personas.md`](./01-personas.md) — the full system prompts given
    to each of the three debating agents.
-3. [`transcript.md`](./transcript.md) — the debate itself, written turn
-   by turn by separately spawned agents, each reading only the transcript
-   so far before responding, plus a closing synthesis.
+3. [`transcript.md`](./transcript.md) — the debate itself. The first
+   eleven turns (through the closing statements and synthesis) were each
+   written by a separately spawned agent, shown only the transcript so
+   far, so the exchange is a genuine back-and-forth rather than one
+   author writing both sides. The conversation then keeps going — audit
+   capture, systemic/correlated insurance risk (and why a private market
+   alone can't hold it), open-weight release, a brief aside on AI moral
+   status, and the seam between corporate/civilian AI governance and
+   state-actor AI risk, which none of the earlier mechanism actually
+   reaches. That second half is flagged in-line as authored directly in
+   one continuous pass rather than spawned turn-by-turn, since it moves
+   into fast interruptions and one-line reactions that a cold per-line
+   agent spawn would have flattened.
