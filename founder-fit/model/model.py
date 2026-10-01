@@ -7,37 +7,37 @@ Run:  python3 model.py > output.md
 
 SCEN = {
     "conservative": dict(
-        new_households=[60, 250, 700, 1500, 2800],   # D
+        new_households=[50, 200, 400, 600, 800],      # D (stays Oklahoma-only)
         retention=0.80,          # C (agency benchmarks run ~80-90%)
         bundle_rate=0.20,        # D share of households that also place auto
         cac=550,                 # C realistic paid/partner blended cost per bound household
         keep_share=[0.75, 0.75, 0.80, 0.85, 0.85],   # C aggregator split, improving with direct appts
-        fixed=[20_000, 100_000, 350_000, 800_000, 1_600_000],  # D non-CAC opex (team, tech, rent)
+        fixed=[20_000, 90_000, 200_000, 300_000, 400_000],  # D non-CAC opex (team, tech, rent)
     ),
     "base": dict(
-        new_households=[150, 600, 1800, 4500, 9000],  # D
+        new_households=[120, 380, 700, 1000, 1350],  # D (reconciled to research/W4_business_model.md)
         retention=0.85,          # C (Goosehead reports ~86%; B)
         bundle_rate=0.30,        # D
         cac=350,                 # C
         keep_share=[0.80, 0.80, 0.85, 0.90, 0.90],    # C
-        fixed=[30_000, 150_000, 600_000, 1_600_000, 3_500_000],  # D
+        fixed=[30_000, 120_000, 250_000, 450_000, 650_000],  # D
     ),
     "aggressive": dict(
-        new_households=[250, 1200, 4000, 10000, 20000],  # D
+        new_households=[200, 900, 2500, 6000, 12000],  # D (venture-funded, OK+TX+KS by yr 3)
         retention=0.88,          # C
         bundle_rate=0.40,        # D
         cac=250,                 # C (vendor cost-per-bind floor ~$120-250)
         keep_share=[0.80, 0.85, 0.90, 0.92, 0.92],    # C
-        fixed=[40_000, 250_000, 1_000_000, 2_800_000, 6_000_000],  # D
+        fixed=[40_000, 250_000, 900_000, 2_200_000, 4_000_000],  # D
     ),
 }
 
 HOME_PREMIUM = 5400      # B: OK average homeowners premium ~$5,378 (LendingTree 2026)
-AUTO_PREMIUM = 2200      # D: placeholder, to be replaced with sourced OK figure
+AUTO_PREMIUM = 1860      # C: OK full-coverage auto estimate used in research/W4_business_model.md
 HOME_NEW, HOME_REN = 0.13, 0.10   # C: homeowners commission new 12-15%, renewal 8-12%
 AUTO_NEW, AUTO_REN = 0.10, 0.09   # C
 PREMIUM_INFLATION = 0.05  # D: commissions are % of premium; OK premiums rose ~7% in 2026 (B)
-SERVICE_COST = 90         # D: $/policy/year servicing (CSR time, AMS seats, E&O allocation)
+SERVICE_COST = 150        # D: $/policy/year servicing incl. licensed CSR time, AMS seats, E&O allocation
 
 
 def run(name, s):
@@ -95,5 +95,5 @@ print("- Revenue scales with *households in force × premium × commission*. Bec
       "premium inflation in storm states raises revenue per household without extra work (and is a political risk).")
 print("- The model is most sensitive to CAC and retention. A $200 swing in CAC or 5 points of retention moves "
       "LTV:CAC more than any other input; both are measured in the 30-day and 100-day plans.")
-print("- Even the aggressive case is ~$20M+ revenue in year 5. $100M revenue needs roughly $1B of premium placed "
+print("- Base case is a good small business (~$1.5–2M revenue, profitable by year 4). Only the venture-funded aggressive case reaches ~$15M+ in year 5. $100M revenue needs roughly $1B of premium placed "
       "(≈150k households), which is a 10+ year, multi-state outcome — see the scale path in the blueprint.")
